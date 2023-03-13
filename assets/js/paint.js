@@ -9,17 +9,21 @@ function configureListeners() {
     for (var i = 0; i < images.length; i++) {        
         images[i].addEventListener('mouseout', addOpacity)
     }
-
 }
 
 function addOpacity(event) {
     // add appropriate CSS class
-    this.style.opacity = 1     
+    this.style.opacity = 1
+    this.style.transform = 'none'
 }
 
 function removeOpacity(event) {
      //remove appropriate CSS class
     this.style.opacity = 0.5
+    this.style.transform = 'scale(1.1)'
+    this.style.transform = 'translateZ(9999)'
+    this.style.transition = 'all 0.3s'
+    
 
     let element = document.getElementById('color-price');
         element.textContent = '';
